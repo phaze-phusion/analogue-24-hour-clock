@@ -1,18 +1,12 @@
 @use 'options';
 
 :root {
-  --bg: #aaa;
-  --font: 5vmin;
-  --hand: 2vmin;
-  --color: #000;
+  --body-bg: #aaa;
 
   --face-size: 90vmin;
   --face-border-width: calc(var(--face-size) * 0.015); // fraction of face size
   --face-border-color: hsl(166, 80%, 20%);
   --face-bg: hsl(166, 80%, 40%);
-
-  --center-plate-size: 8%; // percentage of face size
-  --center-plate-color: var(--hand-hour-color, #0f0);
 
   --hand-hour-length: 28%; // percentage of face size
   --hand-hour-width: 2vmin;
@@ -67,7 +61,7 @@
 
 html,
 body {
-  background-color: var(--bg);
+  background-color: var(--body-bg);
   color: hsl(0, 0%, 84.7%);
   font-family: 'Source Sans Pro', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif ;
 }

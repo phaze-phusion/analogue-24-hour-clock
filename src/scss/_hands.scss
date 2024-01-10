@@ -15,9 +15,10 @@
   }
 
   // // Shadow of hands
+  // TODO: Change shadow orientation based on degrees of hand
   // &:after {
   //   content: '';
-  //   background: linear-gradient(90deg, transparent 25%, hsla(0, 0%, 0%, 0.5));
+  //   background: hsla(0, 0%, 0%, 0.5);
   //   filter: blur(3px);
   //   border-radius: 0 50% 50% 0;
   //   width: 100%;

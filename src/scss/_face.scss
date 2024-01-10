@@ -6,12 +6,13 @@
 
 #clock-face {
   @extend %clock-size;
-  font-size: var(--font);
   border: var(--face-border-width) solid var(--face-border-color);
   border-radius: 50%;
   background-color: var(--face-bg);
 
-  // center plate
+  // // center plate
+  // --center-plate-size: 8%; // percentage of face size
+  // --center-plate-color: var(--hand-hour-color, #0f0);
   // &:before {
   //   --plate-position: calc(50% - var(--center-plate-size) / 2);
   //   content: '';
@@ -24,9 +25,4 @@
   //   background-color: var(--center-plate-color);
   //   border-radius: 50%;
   // }
-}
-
-#marks {
-  @extend %clock-size;
-  z-index: 5;
 }
