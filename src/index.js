@@ -3,7 +3,6 @@ import style from './scss/analogue-clock.scss';
  * Initial idea comes from https://codepen.io/chalda/pen/xXOKjO
  */
 
-
 /**
  * Using Math.round fixes some of the jagged movements of hour and minute hands
  * @see https://stackoverflow.com/a/53416030
