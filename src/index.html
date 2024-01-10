@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta charset="utf-8">
+  <meta name="description" content="TIX clock">
+  <meta name="author" content="phaze-phusion">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, shrink-to-fit=no">
+  <title>Analogue 24-hour clock</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon32.png">
+</head>
+<body>
+<main>
+  <div id="clock-face">
+    <div id="hour-hand" class="hand"></div>
+    <div id="minute-hand" class="hand"></div>
+    <div id="second-hand" class="hand"></div>
+    <div id="marks">
+      <!-- #marks>#mark-major-$.mark-major*24 -->
+      <div id="mark-major-1" class="mark-major"></div>
+      <div id="mark-major-2" class="mark-major"></div>
+      <div id="mark-major-3" class="mark-major"></div>
+      <div id="mark-major-4" class="mark-major"></div>
+      <div id="mark-major-5" class="mark-major"></div>
+      <div id="mark-major-6" class="mark-major"></div>
+      <div id="mark-major-7" class="mark-major"></div>
+      <div id="mark-major-8" class="mark-major"></div>
+      <div id="mark-major-9" class="mark-major"></div>
+      <div id="mark-major-10" class="mark-major"></div>
+      <div id="mark-major-11" class="mark-major"></div>
+      <div id="mark-major-12" class="mark-major"></div>
+      <div id="mark-major-13" class="mark-major"></div>
+      <div id="mark-major-14" class="mark-major"></div>
+      <div id="mark-major-15" class="mark-major"></div>
+      <div id="mark-major-16" class="mark-major"></div>
+      <div id="mark-major-17" class="mark-major"></div>
+      <div id="mark-major-18" class="mark-major"></div>
+      <div id="mark-major-19" class="mark-major"></div>
+      <div id="mark-major-20" class="mark-major"></div>
+      <div id="mark-major-21" class="mark-major"></div>
+      <div id="mark-major-22" class="mark-major"></div>
+      <div id="mark-major-23" class="mark-major"></div>
+      <div id="mark-major-24" class="mark-major"></div>
+
+      <div id="mark-minor-1" class="mark-minor"></div>
+      <div id="mark-minor-2" class="mark-minor"></div>
+      <div id="mark-minor-3" class="mark-minor"></div>
+      <div id="mark-minor-4" class="mark-minor"></div>
+      <div id="mark-minor-5" class="mark-minor"></div>
+      <div id="mark-minor-6" class="mark-minor"></div>
+      <div id="mark-minor-7" class="mark-minor"></div>
+      <div id="mark-minor-8" class="mark-minor"></div>
+      <div id="mark-minor-9" class="mark-minor"></div>
+      <div id="mark-minor-10" class="mark-minor"></div>
+      <div id="mark-minor-11" class="mark-minor"></div>
+      <div id="mark-minor-12" class="mark-minor"></div>
+      <div id="mark-minor-13" class="mark-minor"></div>
+      <div id="mark-minor-14" class="mark-minor"></div>
+      <div id="mark-minor-15" class="mark-minor"></div>
+      <div id="mark-minor-16" class="mark-minor"></div>
+      <div id="mark-minor-17" class="mark-minor"></div>
+      <div id="mark-minor-18" class="mark-minor"></div>
+      <div id="mark-minor-19" class="mark-minor"></div>
+      <div id="mark-minor-20" class="mark-minor"></div>
+      <div id="mark-minor-21" class="mark-minor"></div>
+      <div id="mark-minor-22" class="mark-minor"></div>
+      <div id="mark-minor-23" class="mark-minor"></div>
+      <div id="mark-minor-24" class="mark-minor"></div>
+      <div id="mark-minor-25" class="mark-minor"></div>
+      <div id="mark-minor-26" class="mark-minor"></div>
+      <div id="mark-minor-27" class="mark-minor"></div>
+      <div id="mark-minor-28" class="mark-minor"></div>
+      <div id="mark-minor-29" class="mark-minor"></div>
+      <div id="mark-minor-30" class="mark-minor"></div>
+      <div id="mark-minor-31" class="mark-minor"></div>
+      <div id="mark-minor-32" class="mark-minor"></div>
+      <div id="mark-minor-33" class="mark-minor"></div>
+      <div id="mark-minor-34" class="mark-minor"></div>
+      <div id="mark-minor-35" class="mark-minor"></div>
+      <div id="mark-minor-36" class="mark-minor"></div>
+      <div id="mark-minor-37" class="mark-minor"></div>
+      <div id="mark-minor-38" class="mark-minor"></div>
+      <div id="mark-minor-39" class="mark-minor"></div>
+      <div id="mark-minor-40" class="mark-minor"></div>
+      <div id="mark-minor-41" class="mark-minor"></div>
+      <div id="mark-minor-42" class="mark-minor"></div>
+      <div id="mark-minor-43" class="mark-minor"></div>
+      <div id="mark-minor-44" class="mark-minor"></div>
+      <div id="mark-minor-45" class="mark-minor"></div>
+      <div id="mark-minor-46" class="mark-minor"></div>
+      <div id="mark-minor-47" class="mark-minor"></div>
+      <div id="mark-minor-48" class="mark-minor"></div>
+      <div id="mark-minor-49" class="mark-minor"></div>
+      <div id="mark-minor-50" class="mark-minor"></div>
+      <div id="mark-minor-51" class="mark-minor"></div>
+      <div id="mark-minor-52" class="mark-minor"></div>
+      <div id="mark-minor-53" class="mark-minor"></div>
+      <div id="mark-minor-54" class="mark-minor"></div>
+      <div id="mark-minor-55" class="mark-minor"></div>
+      <div id="mark-minor-56" class="mark-minor"></div>
+      <div id="mark-minor-57" class="mark-minor"></div>
+      <div id="mark-minor-58" class="mark-minor"></div>
+      <div id="mark-minor-59" class="mark-minor"></div>
+      <div id="mark-minor-60" class="mark-minor"></div>
+    </div>
+  </div>
+</main>
+</body>
+</html>

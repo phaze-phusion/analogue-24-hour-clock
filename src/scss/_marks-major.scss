@@ -1,0 +1,65 @@
+@use 'sass:math';
+@use 'options';
+
+.mark-major {
+  --mark-height-next-gradient-stop: calc(var(--mark-major-height) * 1.1); // prevents the jagged edges on the marks' inner sides
+  --overlap-adjustment: calc(var(--mark-major-height) * 0.08); // prevent gap between face-border and mark
+  --color: var(--mark-major-color, var(--face-border-color));
+  box-sizing: border-box;
+  width: var(--mark-major-width);
+  height: calc(50% + var(--overlap-adjustment));
+  // first stop isn't needed but without it WebStorm loses it's mind
+  background: linear-gradient(var(--color) 0%, var(--color) var(--mark-major-height), transparent var(--mark-height-next-gradient-stop));
+  top: calc(var(--overlap-adjustment) / -2);
+  left: calc(50% - var(--mark-major-width) / 2);
+  position: absolute;
+  transform-origin: center bottom;
+
+  @each $numeral in (hour, minute) {
+    $pseudo-element: if($numeral == hour, after, before);
+    &:#{$pseudo-element} {
+      --container-size: calc(var(--numeral-#{$numeral}-font-size) * 1.6);
+      font-size: var(--numeral-#{$numeral}-font-size);
+      font-weight: var(--numeral-#{$numeral}-font-weight);
+      display: block;
+      width: var(--container-size);
+      height: var(--container-size);
+      line-height: var(--container-size);
+      position: absolute;
+      top: var(--numeral-#{$numeral}-offset-from-face-border);
+      left: calc(var(--container-size) * var(--numeral-#{$numeral}-position-offset));
+      text-align: center;
+      color: var(--numeral-#{$numeral}-color);
+      background: var(--numeral-#{$numeral}-bg);
+      border-radius: 50%;
+    }
+  }
+}
+
+$count: 24;
+$degrees: math.div(360, $count); // 360 degrees divided by 24 = 15
+
+@for $i from 1 through $count {
+  #mark-major-#{$i}.mark-major {
+    // rotate the tick mark
+    transform: rotate(#{$degrees * $i}deg);
+
+    // rotate the number back to horizontal
+    &:after {
+      content: '#{$i}';
+      transform: rotate(-#{$degrees * $i}deg);
+    }
+
+    // Add the minute numerals every 2 marks
+    @if $i % 2 == 0 {
+      &:before {
+        transform: rotate(-#{$degrees * $i}deg);
+        content: '#{math.div($i, 2) * 5}';
+
+        @if $i == $count and options.$use-60-as-zero != true {
+          content: '0';
+        }
+      }
+    }
+  }
+}

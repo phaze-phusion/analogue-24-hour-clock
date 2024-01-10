@@ -1,0 +1,32 @@
+%clock-size {
+  height: calc(var(--face-size) - var(--face-border-width) * 2);
+  width: calc(var(--face-size) - var(--face-border-width) * 2);
+  position: relative;
+}
+
+#clock-face {
+  @extend %clock-size;
+  font-size: var(--font);
+  border: var(--face-border-width) solid var(--face-border-color);
+  border-radius: 50%;
+  background-color: var(--face-bg);
+
+  // center plate
+  // &:before {
+  //   --plate-position: calc(50% - var(--center-plate-size) / 2);
+  //   content: '';
+  //   display: block;
+  //   width: var(--center-plate-size);
+  //   height: var(--center-plate-size);
+  //   position: absolute;
+  //   top: var(--plate-position);
+  //   left: var(--plate-position);
+  //   background-color: var(--center-plate-color);
+  //   border-radius: 50%;
+  // }
+}
+
+#marks {
+  @extend %clock-size;
+  z-index: 5;
+}

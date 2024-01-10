@@ -1,0 +1,49 @@
+.hand {
+  position: absolute;
+  left: 50%;
+  border-radius: 0 50% 50% 0; // creates the point of each hand
+  transform-origin: 0;
+  transition: all 0.05s;
+  rotate: -90deg; // set all hands to zero
+  z-index: 10;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+  }
+
+  // // Shadow of hands
+  // &:after {
+  //   content: '';
+  //   background: linear-gradient(90deg, transparent 25%, hsla(0, 0%, 0%, 0.5));
+  //   filter: blur(3px);
+  //   border-radius: 0 50% 50% 0;
+  //   width: 100%;
+  //   height: 50%;
+  //   display: block;
+  //   transform-origin: 0 0;
+  //   transform: rotate(2deg);
+  //   z-index: 1;
+  // }
+}
+
+@each $hand in (hour, minute, second) {
+  ##{$hand}-hand {
+    --hand-half-width: calc(var(--hand-#{$hand}-width) / 2);
+    width: var(--hand-#{$hand}-length);
+    height: var(--hand-#{$hand}-width);
+    top: calc(50% - var(--hand-half-width));
+    background-color: var(--hand-#{$hand}-color);
+
+    &:before {
+      --pinion-base-position: calc(var(--hand-#{$hand}-pinion-size) / -2);
+      width: var(--hand-#{$hand}-pinion-size);
+      height: var(--hand-#{$hand}-pinion-size);
+      top: calc(var(--pinion-base-position) + var(--hand-half-width));
+      left: var(--pinion-base-position);
+      background-color: var(--hand-#{$hand}-pinion-color);
+    }
+  }
+}
